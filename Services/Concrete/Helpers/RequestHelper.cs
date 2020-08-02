@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using Domain.Enums;
 using Infrastructure.Extensions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -9,12 +10,9 @@ namespace Services.Concrete.Helpers
 {
     public static class RequestHelper
     {
-        public const string ApiUrl = "https://api.warframe.market/v1";
-
         public static JToken GetItemStatistics(string itemString)
         {
-            var uri = new Uri($"{ApiUrl}/items/{itemString.ToSnakeCase()}/statistics");
-            var request = WebRequest.Create(uri);
+            var request = BuildWebRequest("items", itemString.ToSnakeCase(), "statistics");
 
             using (var response = request.GetResponse())
             using (var stream = response.GetResponseStream())
@@ -27,8 +25,8 @@ namespace Services.Concrete.Helpers
 
         public static JToken GetItemOrders(string itemString)
         {
-            var uri = new Uri($"{ApiUrl}/items/{itemString.ToSnakeCase()}/orders");
-            var request = WebRequest.Create(uri);
+            var request = BuildWebRequest("items", itemString.ToSnakeCase(), "orders");
+
 
             using (var response = request.GetResponse())
             using (var stream = response.GetResponseStream())
@@ -37,6 +35,23 @@ namespace Services.Concrete.Helpers
             {
                 return JToken.ReadFrom(jsonReader);
             }
+        }
+
+        public static void TestProfileState(string username)
+        {
+            var request = BuildWebRequest("profile");
+        }
+
+        private static Uri BuildRequestUri(params string[] path)
+        {
+            return new Uri("https://api.warframe.market/v1/" + string.Join("/", path));
+        }
+
+        private static WebRequest BuildWebRequest(params string[] path)
+        {
+            var request = WebRequest.Create(BuildRequestUri(path));
+
+            return request;
         }
     }
 }

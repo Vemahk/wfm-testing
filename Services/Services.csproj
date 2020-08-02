@@ -45,16 +45,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concrete\Helpers\RequestHelper.cs" />
+    <Compile Include="Concrete\HttpService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{CB191EF3-C29B-4081-A630-1F5831F35785}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
       <Project>{3D6FFE24-A9FB-4DBD-969A-7F60C9C58B63}</Project>
       <Name>Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ServiceAbstractions\ServiceAbstractions.csproj">
+      <Project>{2FD5DAB2-289D-4144-A648-C7A59E8C55F7}</Project>
+      <Name>ServiceAbstractions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mapping\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
