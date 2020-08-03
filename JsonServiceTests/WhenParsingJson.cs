@@ -24,7 +24,7 @@ namespace JsonServiceTests
 
             using (var stream = FileHelper.GetFileStream("order_test.json"))
             {
-                order = _jsonRequestService.GetOrderFromJson(stream);
+                order = _jsonRequestService.GetWfmObjectFromJson<Order>(stream);
             }
 
             Assert.That(order, Is.Not.Null, "Order object returned null... No error?");
