@@ -5,12 +5,12 @@ namespace Domain.Models.Orders
 {
     public class User : BaseWfmObject
     {
-        public int Reputation { get; set; }
-        public int ReputationBonus { get; set; }
-        public string Region { get; set; }
-        public DateTime LastSeen { get; set; }
-        public string AvatarUrl { get; set; }
-        public string WarframeUserName { get; set; }
-        public UserStatusType Status { get; set; }
+        public int Reputation { get; set; }          //reputation
+        public int ReputationBonus { get; set; }     //reputation_bonus
+        public string Region { get; set; }           //region
+        public DateTime LastSeen { get; set; }       //last_seen
+        public string AvatarUrl { get; set; }        //avatar
+        public string WarframeUserName { get; set; } //ingame_name
+        public UserStatusType Status { get; set; }   //status
     }
 }

@@ -12,12 +12,12 @@ namespace JsonService.Services.Mapping
     {
         protected JsonMapping() {}
 
-        private static readonly Dictionary<Type, JsonMapping> _mappingDict = new Dictionary<Type, JsonMapping>();
+        private static readonly Dictionary<Type, JsonMapping> MappingDict = new Dictionary<Type, JsonMapping>();
 
         public static JsonMapping<TObject> Get<TObject>() where TObject : BaseWfmObject
         {
             var type = typeof(TObject);
-            if (!_mappingDict.TryGetValue(type, out var mapper))
+            if (!MappingDict.TryGetValue(type, out var mapper))
             {
                 var jsonMappingType = typeof(JsonMapping<TObject>);
                 var applicableTypes = Assembly.GetAssembly(jsonMappingType).GetTypes()
@@ -25,21 +25,30 @@ namespace JsonService.Services.Mapping
 
                 if (applicableTypes.Count != 1)
                 {
-                    throw new ApplicationException($"JsonMapping of type {type.Name} does not have a one-to-one mapping.");
+                    throw new ApplicationException($"JsonMapping for type {type.Name} does not have a one-to-one mapping.");
                 }
 
-                var mappingType = applicableTypes.Single();
-                mapper = (JsonMapping) Activator.CreateInstance(mappingType);
-
-                _mappingDict.Add(type, mapper);
+                mapper = (JsonMapping) Activator.CreateInstance(applicableTypes.Single());
+                MappingDict.Add(type, mapper);
             }
 
             return (JsonMapping<TObject>) mapper;
+        }
+
+        public static TObject Parse<TObject>(JToken token) where TObject : BaseWfmObject
+        {
+            return Get<TObject>().Parse(token);
         }
     }
 
     public abstract class JsonMapping<TObject> : JsonMapping where TObject : BaseWfmObject
     {
         public abstract TObject Parse(JToken token);
+
+        protected void TokenNotNull(JToken token)
+        {
+            if(token == null)
+                throw new ArgumentException($"Argument: '{nameof(token)}' cannot be null");
+        }
     }
 }

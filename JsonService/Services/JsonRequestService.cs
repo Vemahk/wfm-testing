@@ -1,5 +1,8 @@
 ﻿using System.IO;
+using Domain.Models;
+using Domain.Models.Orders;
 using JsonService.Services.Abstractions;
+using JsonService.Services.Mapping;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -7,7 +10,11 @@ namespace JsonService.Services
 {
     public class JsonRequestService : IJsonRequestService
     {
-
+        public TObject GetWfmObjectFromJson<TObject>(Stream stream) where TObject : BaseWfmObject
+        {
+            var token = TokenizeIncomingJson(stream);
+            return JsonMapping.Parse<TObject>(token);
+        }
 
         private JToken TokenizeIncomingJson(Stream stream)
         {
@@ -16,8 +23,6 @@ namespace JsonService.Services
             {
                 return JToken.ReadFrom(jsonReader);
             }
-
-
         }
     }
 }

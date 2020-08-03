@@ -53,6 +53,7 @@
     <Compile Include="Services\JsonRequestService.cs" />
     <Compile Include="Services\Mapping\JsonMapping.cs" />
     <Compile Include="Services\Mapping\OrderJsonMapping.cs" />
+    <Compile Include="Services\Mapping\UserJsonMapping.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\" />

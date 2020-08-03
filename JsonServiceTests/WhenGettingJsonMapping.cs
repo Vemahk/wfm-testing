@@ -9,16 +9,21 @@ namespace JsonServiceTests
     public class WhenGettingJsonMapping
     {
         [OneTimeSetUp]
-        public void FixutreSetup()
+        public void FixtureSetup()
         {
 
         }
 
         [Test]
-        [TestCase(typeof(Order))]
-        public void ThenGettingOrderMappingWorks(Type t)
+        public void ThenGettingOrderMappingWorks()
         {
-            Assert.That(() => JsonMapping.Get<Order>(), Throws.Nothing);
+            Assert.That(JsonMapping.Get<Order>, Throws.Nothing);
+        }
+
+        [Test]
+        public void ThenGettingUserMappingWorks()
+        {
+            Assert.That(JsonMapping.Get<User>, Throws.Nothing);
         }
     }
 }

@@ -47,8 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WhenGettingJsonMapping.cs" />
+    <Compile Include="WhenParsingJson.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -63,6 +65,7 @@
       <Name>JsonService</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

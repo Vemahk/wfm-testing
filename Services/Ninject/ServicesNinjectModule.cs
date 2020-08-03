@@ -1,5 +1,4 @@
-﻿using System;
-using JsonService;
+﻿using JsonService;
 using Ninject;
 using Ninject.Modules;
 using ServiceAbstractions.Interfaces;
@@ -11,11 +10,7 @@ namespace Services.Ninject
     {
         public override void Load()
         {
-            Bind<IHttpService>().To<HttpService>();
-
-            if(Kernel is null)
-                throw new ApplicationException("Ninject Kernel is null. Cannot proceed.");
-
+            Bind<IHttpService>().To<HttpService>().InSingletonScope();
             Kernel.Load<JsonServiceNinjectModule>();
         }
     }

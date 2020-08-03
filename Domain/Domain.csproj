@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="Enums\OrderType.cs" />
     <Compile Include="Enums\PlatformType.cs" />
-    <Compile Include="Enums\RequestType.cs" />
     <Compile Include="Enums\UserStatusType.cs" />
     <Compile Include="Models\Orders\Order.cs" />
     <Compile Include="Models\Orders\User.cs" />
