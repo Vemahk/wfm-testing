@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace WFM_Testing.Models.Statistics
+namespace Domain.Models.Statistics
 {
-    public class ClosedStatistic
+    public class ClosedStatistic : BaseWfmObject
     {
         public DateTime Time { get; set; }
         public int Volume { get; set; }

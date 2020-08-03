@@ -31,8 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,12 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Concrete\Helpers\RequestHelper.cs" />
+    <Compile Include="Concrete\Helpers\HttpRequestHelper.cs" />
     <Compile Include="Concrete\HttpService.cs" />
+    <Compile Include="Ninject\ServicesNinjectModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">
@@ -60,13 +58,18 @@
       <Project>{3D6FFE24-A9FB-4DBD-969A-7F60C9C58B63}</Project>
       <Name>Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JsonService\JsonService.csproj">
+      <Project>{D56BB82F-16A2-41C8-ABD8-9047B3A58828}</Project>
+      <Name>JsonService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ServiceAbstractions\ServiceAbstractions.csproj">
       <Project>{2FD5DAB2-289D-4144-A648-C7A59E8C55F7}</Project>
       <Name>ServiceAbstractions</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Mapping\" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

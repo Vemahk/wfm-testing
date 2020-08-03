@@ -3,7 +3,7 @@ using Domain.Enums;
 
 namespace Domain.Models.Orders
 {
-    public class User
+    public class User : BaseWfmObject
     {
         public int Reputation { get; set; }
         public int ReputationBonus { get; set; }
@@ -12,6 +12,5 @@ namespace Domain.Models.Orders
         public string AvatarUrl { get; set; }
         public string WarframeUserName { get; set; }
         public UserStatusType Status { get; set; }
-        public string Id { get; set; }
     }
 }

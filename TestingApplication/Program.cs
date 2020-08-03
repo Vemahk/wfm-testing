@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Ninject;
 
 namespace TestingApplication
 {
@@ -10,8 +6,9 @@ namespace TestingApplication
     {
         static void Main(string[] args)
         {
-            const string ItemLookup = "Panthera Prime Stock";
-            //var token = RequestHelper.GetItemOrders(ItemLookup);
+            var kernel = NinjectModuleLoader.Kernel;
+
+            
         }
     }
 }
