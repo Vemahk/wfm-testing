@@ -7,10 +7,6 @@ namespace JsonService.Services.Mapping
 {
     public class OrderJsonMapping : JsonMapping<Order>
     {
-        public OrderJsonMapping()
-        {
-        }
-
         public override Order Parse(JToken token)
         {
             TokenNotNull(token);

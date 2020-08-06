@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonService", "JsonService\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonServiceTests", "JsonServiceTests\JsonServiceTests.csproj", "{3784F6F3-7522-44BC-B96D-E9B2F44E4669}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{D7276FF6-125E-4DEF-9EF9-30185DF73ECD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{3784F6F3-7522-44BC-B96D-E9B2F44E4669}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3784F6F3-7522-44BC-B96D-E9B2F44E4669}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3784F6F3-7522-44BC-B96D-E9B2F44E4669}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7276FF6-125E-4DEF-9EF9-30185DF73ECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7276FF6-125E-4DEF-9EF9-30185DF73ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7276FF6-125E-4DEF-9EF9-30185DF73ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7276FF6-125E-4DEF-9EF9-30185DF73ECD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

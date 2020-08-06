@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\Infrastructure\LogSeverity.cs" />
     <Compile Include="Enums\OrderType.cs" />
     <Compile Include="Enums\PlatformType.cs" />
     <Compile Include="Enums\UserStatusType.cs" />
@@ -53,5 +54,6 @@
     <Compile Include="Models\Statistics\ClosedStatistic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
