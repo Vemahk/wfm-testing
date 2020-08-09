@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using ServiceAbstractions.Interfaces;
+using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
-using System.Runtime.InteropServices.ComTypes;
 using System.Threading;
 using System.Threading.Tasks;
-using ServiceAbstractions.Interfaces;
 
 namespace Services.Concrete
 {

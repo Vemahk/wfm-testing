@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Concrete\Helpers\HttpRequestHelper.cs" />
     <Compile Include="Concrete\HttpService.cs" />
+    <Compile Include="Concrete\Logger.cs" />
     <Compile Include="Ninject\ServicesNinjectModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,6 +62,10 @@
     <ProjectReference Include="..\JsonService\JsonService.csproj">
       <Project>{D56BB82F-16A2-41C8-ABD8-9047B3A58828}</Project>
       <Name>JsonService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{D7276FF6-125E-4DEF-9EF9-30185DF73ECD}</Project>
+      <Name>Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\ServiceAbstractions\ServiceAbstractions.csproj">
       <Project>{2FD5DAB2-289D-4144-A648-C7A59E8C55F7}</Project>
