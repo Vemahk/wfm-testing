@@ -5,8 +5,12 @@ namespace ServiceAbstractions.Interfaces
 {
     public interface ILogger
     {
-        void LogEvent(string msg, LogSeverity severity);
-        void LogError(string msg, LogSeverity severity = LogSeverity.ERROR);
-        void LogException(Exception exception, string msg, LogSeverity severity = LogSeverity.ERROR);
+        void Log(string msg, LogSeverity severity);
+        void LogTrace(string msg);
+        void LogDebug(string msg);
+        void LogEvent(string msg);
+        void LogWarning(string msg);
+        void LogError(string msg, bool fatal = false);
+        void LogException(Exception exception, string msg, bool fatal = false);
     }
 }

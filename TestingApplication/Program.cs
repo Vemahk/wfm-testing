@@ -1,5 +1,4 @@
-﻿using Domain.Enums.Infrastructure;
-using Ninject;
+﻿using Ninject;
 using ServiceAbstractions.Interfaces;
 
 namespace TestingApplication
@@ -11,7 +10,7 @@ namespace TestingApplication
             var kernel = NinjectModuleLoader.Kernel;
             var logger = kernel.Get<ILogger>();
 
-            logger.LogEvent("Hello, world!", LogSeverity.TRACE);
+            logger.LogTrace("Program Start!");
         }
     }
 }

@@ -16,19 +16,39 @@ namespace Services.Concrete
             _loggingRepository = loggingRepository;
         }
 
-        public void LogEvent(string msg, LogSeverity severity)
-        {
-            Console.WriteLine($"Logging event for {_appName}");
-            _loggingRepository.LogEvent(msg, severity);
-        }
-
-        public void LogError(string msg, LogSeverity severity = LogSeverity.ERROR)
+        public void Log(string msg, LogSeverity severity)
         {
             _loggingRepository.LogEvent(msg, severity);
         }
 
-        public void LogException(Exception exception, string msg, LogSeverity severity = LogSeverity.ERROR)
+        public void LogTrace(string msg)
         {
+            Log(msg, LogSeverity.TRACE);
+        }
+
+        public void LogDebug(string msg)
+        {
+            Log(msg, LogSeverity.DEBUG);
+        }
+
+        public void LogEvent(string msg)
+        {
+            Log(msg, LogSeverity.EVENT);
+        }
+
+        public void LogWarning(string msg)
+        {
+            Log(msg, LogSeverity.WARNING);
+        }
+
+        public void LogError(string msg, bool fatal = false)
+        {
+            Log(msg, fatal ? LogSeverity.FATAL : LogSeverity.ERROR);
+        }
+
+        public void LogException(Exception exception, string msg, bool fatal = false)
+        {
+            var severity = fatal ? LogSeverity.FATAL : LogSeverity.ERROR;
             _loggingRepository.LogException(exception, msg, severity);
         }
     }
