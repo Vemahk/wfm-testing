@@ -19,7 +19,7 @@ namespace Services.Ninject
 
             /* --== Service Layer ==-- */
             Bind<IHttpService>().To<HttpService>().InSingletonScope();
-            Bind<ILogger>().To<Logger>().WithConstructorArgument("appName", appName ?? string.Empty);
+            Bind<ILogger>().To<Logger>().InSingletonScope().WithConstructorArgument("appName", appName ?? string.Empty);
             // ReSharper disable once AssignNullToNotNullAttribute
             Kernel.Load<JsonServiceNinjectModule>();
 

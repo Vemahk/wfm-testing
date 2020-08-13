@@ -1,4 +1,5 @@
-﻿using ServiceAbstractions.Interfaces;
+﻿using System;
+using ServiceAbstractions.Interfaces;
 
 namespace ServiceAbstractions
 {
@@ -9,6 +10,11 @@ namespace ServiceAbstractions
         protected Service(ILogger logger)
         {
 
+        }
+
+        protected void LogException(Exception e, string message)
+        {
+            _logger.LogException(e, message);
         }
     }
 }

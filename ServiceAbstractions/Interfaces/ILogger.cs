@@ -1,5 +1,5 @@
-﻿using Domain.Enums.Infrastructure;
-using System;
+﻿using System;
+using Domain.Enums.Infrastructure;
 
 namespace ServiceAbstractions.Interfaces
 {

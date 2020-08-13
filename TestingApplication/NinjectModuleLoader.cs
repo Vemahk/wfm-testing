@@ -1,6 +1,4 @@
 ﻿using Ninject;
-using ServiceAbstractions.Interfaces;
-using Services.Concrete;
 using Services.Ninject;
 
 namespace TestingApplication

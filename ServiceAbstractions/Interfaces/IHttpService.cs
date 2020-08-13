@@ -7,8 +7,8 @@ namespace ServiceAbstractions.Interfaces
 {
     public interface IHttpService
     {
-        Stream Post(string uri, IEnumerable<KeyValuePair<string, string>> headers);
-        Stream Get(string uri);
+        ServiceResponseScalar<Stream> Post(string uri, IEnumerable<KeyValuePair<string, string>> headers);
+        ServiceResponseScalar<Stream> Get(string uri);
 
         Task<Stream> PostAsync(string uri, IEnumerable<KeyValuePair<string, string>> headers, CancellationToken token = new CancellationToken());
         Task<Stream> GetAsync(string uri);

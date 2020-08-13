@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using Domain.Models;
-using Domain.Models.Orders;
 using JsonService.Services.Abstractions;
 using JsonService.Services.Mapping;
 using Newtonsoft.Json;
@@ -18,7 +17,7 @@ namespace JsonService.Services
 
         private JToken TokenizeIncomingJson(Stream stream)
         {
-            using (var reader = new StreamReader(stream))
+            using(var reader = new StreamReader(stream))
             using(var jsonReader = new JsonTextReader(reader))
             {
                 return JToken.ReadFrom(jsonReader);

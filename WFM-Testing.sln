@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonServiceTests", "JsonSer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{D7276FF6-125E-4DEF-9EF9-30185DF73ECD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBench", "TestBench\TestBench.csproj", "{5D20980E-FA8C-45DE-82A6-8743F4971600}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{D7276FF6-125E-4DEF-9EF9-30185DF73ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7276FF6-125E-4DEF-9EF9-30185DF73ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7276FF6-125E-4DEF-9EF9-30185DF73ECD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D20980E-FA8C-45DE-82A6-8743F4971600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D20980E-FA8C-45DE-82A6-8743F4971600}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D20980E-FA8C-45DE-82A6-8743F4971600}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D20980E-FA8C-45DE-82A6-8743F4971600}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +78,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E0495591-B3BD-424C-B21A-0D386F4293A5} = {29FB9D34-9424-4AE0-9206-30E1082B0827}
 		{3784F6F3-7522-44BC-B96D-E9B2F44E4669} = {29FB9D34-9424-4AE0-9206-30E1082B0827}
+		{5D20980E-FA8C-45DE-82A6-8743F4971600} = {29FB9D34-9424-4AE0-9206-30E1082B0827}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {64F59FE7-3A01-474E-976C-D6D425EAF1C4}
