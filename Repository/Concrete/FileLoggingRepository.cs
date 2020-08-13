@@ -8,12 +8,13 @@ namespace Repository.Concrete
     {
         public void LogEvent(string message, LogSeverity severity)
         {
-            
+            Console.WriteLine($"[{DateTime.UtcNow:T}][{severity}] {message}");
         }
 
         public void LogException(Exception e, string message, LogSeverity severity)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"An exception has been logged: {e.Message}");
+            Console.WriteLine($"[{DateTime.UtcNow:T}][{severity}] {message}");
         }
     }
 }

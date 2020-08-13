@@ -55,6 +55,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{CB191EF3-C29B-4081-A630-1F5831F35785}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceAbstractions\ServiceAbstractions.csproj">
+      <Project>{2FD5DAB2-289D-4144-A648-C7A59E8C55F7}</Project>
+      <Name>ServiceAbstractions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Services\Services.csproj">
       <Project>{01E88876-C011-4D43-8926-013873BAF647}</Project>
       <Name>Services</Name>

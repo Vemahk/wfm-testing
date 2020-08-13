@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 using Domain.Enums.Infrastructure;
 using Repository.Abstractions;
 using ServiceAbstractions.Interfaces;
@@ -8,15 +7,18 @@ namespace Services.Concrete
 {
     public class Logger : ILogger
     {
+        private readonly string _appName;
         private readonly ILoggingRepository _loggingRepository;
 
         public Logger(string appName, ILoggingRepository loggingRepository)
         {
+            _appName = appName;
             _loggingRepository = loggingRepository;
         }
 
         public void LogEvent(string msg, LogSeverity severity)
         {
+            Console.WriteLine($"Logging event for {_appName}");
             _loggingRepository.LogEvent(msg, severity);
         }
 

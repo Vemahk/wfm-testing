@@ -15,8 +15,11 @@ namespace Services.Ninject
             if(Kernel == null)
                 throw new ApplicationException("Cannot precede without a Ninject Kernel.");
 
+            var appName = Kernel.Settings.Get("appName", "GenericApplication");
+
             /* --== Service Layer ==-- */
             Bind<IHttpService>().To<HttpService>().InSingletonScope();
+            Bind<ILogger>().To<Logger>().WithConstructorArgument("appName", appName ?? string.Empty);
             // ReSharper disable once AssignNullToNotNullAttribute
             Kernel.Load<JsonServiceNinjectModule>();
 
